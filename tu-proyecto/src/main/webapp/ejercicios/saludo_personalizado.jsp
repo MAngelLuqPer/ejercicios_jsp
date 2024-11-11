@@ -11,7 +11,8 @@
 	String nombre = request.getParameter("nombre");
 	String apellidos = request.getParameter("apellidos");
 %>
-	    <form action="saludo_personalizado.jsp">
+		<h1>Saludo personalizado</h1>
+	    <form method="post">
 	        <label for="nombre">Introduzca el nombre: </label> <br/>
 	        <input type="text" name="nombre" id="nombre" required> <br/> <br/>
 	        <label for="apellidos">Introduzca el apellido: </label> <br/>

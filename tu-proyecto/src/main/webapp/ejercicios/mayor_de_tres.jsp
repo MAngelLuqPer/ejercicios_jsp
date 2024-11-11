@@ -15,10 +15,14 @@
 	double numMayor = 0.0;
 	boolean datosValidos = false;
 	if (request.getParameter("num1")!=null && request.getParameter("num2")!= null && request.getParameter("num3")!= null) {
+		try{
 		num1 = Double.parseDouble(request.getParameter("num1"));
 		num2 = Double.parseDouble(request.getParameter("num2"));
 		num3 = Double.parseDouble (request.getParameter("num3"));
 		datosValidos = true;
+		} catch (NumberFormatException e) {
+			out.println("<h3>Introduzca valores en el formulario antes de enviar</h3>");
+		}
 	}
 	if (num1 > num2 && num1 > num3) {
 		numMayor = num1;

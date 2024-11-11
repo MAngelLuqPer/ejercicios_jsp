@@ -12,9 +12,13 @@
 	double velocidad = 0.0;
 	boolean datosValidos = false;
 	if (request.getParameter("distancia")!= null && request.getParameter("velocidad") != null) {
+		try {
 	    distancia = Double.parseDouble(request.getParameter("distancia"));
 	    velocidad = Double.parseDouble(request.getParameter("velocidad"));
 	    datosValidos = true;
+		} catch (NumberFormatException e) {
+			out.println("<h3>Rellena el formulario antes de enviar</h3>");
+		}
 	}
 %>
     <h1>Calcular tiempo de viaje</h1>
